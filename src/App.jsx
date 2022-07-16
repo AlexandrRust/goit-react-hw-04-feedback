@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Box } from 'components/Box/Box.styled';
 import { FeedbackTitle } from 'components/Title/Title';
 import { FeedbackOptions } from 'components/FeedbackOptions/FeedbackOptions';
