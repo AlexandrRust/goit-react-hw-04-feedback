@@ -1,3 +1,5 @@
+import { buttonNames } from 'const/const';
+
 import { useState, useEffect } from 'react';
 import { Box } from 'components/Box/Box.styled';
 import { FeedbackTitle } from 'components/Title/Title';
@@ -6,13 +8,15 @@ import { FeedbackSection } from 'components/FeedbackSection/FeedbackSection.styl
 import { Notification } from 'components/Notification/Notification';
 import { Statistics } from 'components/StatisticsList/StatisticsList';
 
+// const options = ['good', 'neutral', 'bad'];
+
 export function App() {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
   const [total, setTotal] = useState(0);
   const [positivePercentage, setPositivePercentage] = useState(0);
-  const options = { good, neutral, bad };
+
   const onLeaveFeedback = name => {
     switch (name) {
       case 'good':
@@ -41,7 +45,10 @@ export function App() {
     <Box>
       <FeedbackSection title={'Please leave feedback'}>
         <FeedbackTitle>Please leave feedback</FeedbackTitle>
-        <FeedbackOptions options={options} onLeaveFeedback={onLeaveFeedback} />
+        <FeedbackOptions
+          buttonNames={buttonNames}
+          onLeaveFeedback={onLeaveFeedback}
+        />
       </FeedbackSection>
 
       <FeedbackSection title={'Statistics'}>

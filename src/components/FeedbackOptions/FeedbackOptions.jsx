@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 
 import { List, Button } from 'components/FeedbackOptions/List.styled';
 
-export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  const names = Object.keys(options);
+export const FeedbackOptions = ({ buttonNames, onLeaveFeedback }) => {
+  // const names = Object.keys(options);
   return (
     <List>
-      {names.map(
+      {buttonNames.map(
         name =>
           name !== 'total' &&
           name !== 'positivePercentage' && (
